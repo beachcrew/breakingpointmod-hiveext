@@ -432,8 +432,8 @@ void Rcon::mainLoop()
 				if (timeUntilShutdownMode != lastWarningMinute)
 				{
 					lastWarningMinute = timeUntilShutdownMode;
-					if (timeUntilShutdownMode > 1) { say(-1, timeUntilShutdownModeStr + " Minutes until Server Shutdown Mode."); }
-					else if (timeUntilShutdownMode == 1) { say(-1, timeUntilShutdownModeStr + " Minute until Server Shutdown Mode."); }
+					if (timeUntilShutdownMode > 1) { say(-1, timeUntilShutdownModeStr + " Minutes until Server is restarting."); }
+					else if (timeUntilShutdownMode == 1) { say(-1, timeUntilShutdownModeStr + " Minute until Server restart."); }
 				}
 			}
 		}

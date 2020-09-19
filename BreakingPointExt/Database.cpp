@@ -217,7 +217,7 @@ Database::Account Database::lookupAccount(std::string guid)
 			//Check Forum DB
 			{
 				Poco::Data::Statement stmt((*webserver));
-				stmt << "SELECT T1.`member_id` , T1.`member_group_id` , T1.`member_banned` , T1.`temp_ban` FROM `members` AS T1 INNER JOIN `pfields_content` AS T2 ON T1.`member_id` = T2.`member_id` WHERE T2.`field_14` = ?", use(guid), now;
+				stmt << "SELECT member_id , member_group_id , T1.`member_banned` FROM `members` AS T1 INNER JOIN `pfields_content` AS T2 ON T1.`member_id` = T2.`member_id` WHERE T2.`field_14` = ?", use(guid), now;
 				Poco::Data::RecordSet rs(stmt);
 
 				if (rs.rowCount() > 0)

@@ -68,10 +68,10 @@ BreakingPointExt::BreakingPointExt(std::string a_serverFolder, int a_serverPort)
 	int threadingDelay = pt.get<int>("THREADING.delay", 50);
 
 	// Database Details
-	DatabaseIP = pt.get<std::string>("DATABASE.ip", "127.0.0.1");
-	DatabaseName = pt.get<std::string>("DATABASE.database", "breakingpointmod");
-	DatabaseUser = pt.get<std::string>("DATABASE.username", "root");
-	DatabasePass = pt.get<std::string>("DATABASE.password", "");
+	DatabaseIP = pt.get<std::string>("DATABASE.ip", "192.168.1.159");
+	DatabaseName = pt.get<std::string>("DATABASE.database", "bpsw");
+	DatabaseUser = pt.get<std::string>("DATABASE.username", "bpsw");
+	DatabasePass = pt.get<std::string>("DATABASE.password", "bpsw2020");
 	DatabasePort = pt.get<std::string>("DATABASE.port", "3306");
 
 	//Init Rcon
@@ -84,7 +84,7 @@ BreakingPointExt::BreakingPointExt(std::string a_serverFolder, int a_serverPort)
 
 	//Init VAC
 	vac = new VAC();
-	vac->init("VAC_WEB_API_KEY");
+	vac->init("8F0E1EACF69C5A5828BF6C2215A7EF6E");
 
 	//Server Init / Object Streaming
 	handlers[100] = boost::bind(&BreakingPointExt::serverBootup, this, _1);
